@@ -1,7 +1,7 @@
 ﻿'use client';
 
-import TitleSection from "../../components/[front-site]/list-pictos/title-section";
-import StatSection from "../../components/[front-site]/list-pictos/stat-section";
+import TitleSection from "../components/[front-site]/list-pictos/title-section";
+import StatSection from "../components/[front-site]/list-pictos/stat-section";
 import { usePictosFilter } from '@/lib/pictos-filter';
 
 export default function PictosPage() {

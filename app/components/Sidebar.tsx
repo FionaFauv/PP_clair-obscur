@@ -11,6 +11,7 @@ export default function Sidebar() {
   const menuItems = [
     { name: 'Accueil', path: '/', icon: '🏠' },
     { name: 'Guide Pictos', path: '/pictos', icon: '🎮' },
+    { name: 'Calendrier', path: '/calendrier', icon: '📅' },
   ];
 
   return (
