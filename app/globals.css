@@ -1,26 +1,107 @@
 @import "tailwindcss";
 
+/* Palette Clair Obscur: Expedition 33 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Obscurité */
+  --darkness-deep: #0a0a0f;
+  --darkness-mid: #1a1a24;
+  --darkness-light: #2a2a3a;
+  
+  /* Lumière */
+  --light-gold: #d4af37;
+  --light-gold-dim: #b8922e;
+  --light-glow: #ffd966;
+  --light-soft: #f5f5f0;
+  
+  /* Accents */
+  --accent-blue: #4a6fa5;
+  --accent-purple: #6b5b93;
+  --border-subtle: #3a3a4a;
+  
+  /* Texte */
+  --text-primary: #e8e8e8;
+  --text-secondary: #a8a8b8;
+  --text-muted: #6a6a7a;
+  
+  --background: var(--darkness-deep);
+  --foreground: var(--text-primary);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--darkness-deep);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animations sobres */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.text-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darkness-mid);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-gold-dim);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-gold);
 }
