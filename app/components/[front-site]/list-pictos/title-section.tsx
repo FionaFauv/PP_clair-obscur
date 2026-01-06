@@ -1,6 +1,12 @@
+'use client'
+
 import { usePictosFilter } from '@/lib/pictos-filter';
 
-export default function TitleSection() { 
+interface TitleSectionProps {
+  filterData: ReturnType<typeof usePictosFilter>;
+}
+
+export default function TitleSection({ filterData }: TitleSectionProps) { 
   const {
     searchTerm,
     setSearchTerm,
@@ -9,9 +15,9 @@ export default function TitleSection() {
     zones,
     resetFilters,
     exportToExcel
-  } = usePictosFilter();
+  } = filterData;
     return (
-              <div className="max-w-7xl mx-auto card-large">
+      <>
         <div className="header-gradient">
           <h1 className="title-gold text-glow">🎮 Guide des Pictos</h1>
           <p className="subtitle">Tous les emplacements de Clair Obscur: Expedition 33</p>
@@ -46,6 +52,6 @@ export default function TitleSection() {
             </button>
           </div>
         </div>
-        </div>
+      </>
     );
 }   

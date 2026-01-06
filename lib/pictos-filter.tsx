@@ -1,3 +1,4 @@
+'use client';
 import { useState, useMemo } from 'react';
 import { Picto } from '@/types/picto';
 import { pictosData } from '@/data/pictosData';

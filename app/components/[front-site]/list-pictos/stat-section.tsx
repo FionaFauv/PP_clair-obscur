@@ -1,13 +1,19 @@
+'use client'
+
 import { usePictosFilter } from '@/lib/pictos-filter';
 import { pictosData } from '@/data/pictosData';
 
-export default function StatSection() {
+interface StatSectionProps {
+  filterData: ReturnType<typeof usePictosFilter>;
+}
+
+export default function StatSection({ filterData }: StatSectionProps) {
   const {
     collectedPictos,
     filteredData,
     handleSort,
     togglePicto
-  } = usePictosFilter();
+  } = filterData;
 
   return (
     <>
